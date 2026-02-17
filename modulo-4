@@ -1,0 +1,68 @@
+
+let estoque = [];
+
+// Função para adicionar livro
+function adicionarLivro(titulo, autor, quantidade) {
+  for (let livro of estoque) {
+    if (livro.titulo === titulo) {
+      console.log(`O livro "${titulo}" já existe no estoque.`);
+      return;
+    }
+  }
+
+  estoque.push({
+    titulo: titulo,
+    autor: autor,
+    quantidade: quantidade
+  });
+
+  console.log(`Livro "${titulo}" adicionado com sucesso!`);
+}
+
+//  Função para remover livro
+function removerLivro(titulo) {
+  for (let i = 0; i < estoque.length; i++) {
+    if (estoque[i].titulo === titulo) {
+      estoque.splice(i, 1);
+      console.log(`Livro "${titulo}" removido com sucesso!`);
+      return;
+    }
+  }
+
+  console.log(`Livro "${titulo}" não encontrado no estoque.`);
+}
+
+//  Função para atualizar quantidade
+function atualizarQuantidade(titulo, novaQuantidade) {
+  for (let livro of estoque) {
+    if (livro.titulo === titulo) {
+      livro.quantidade = novaQuantidade;
+      console.log(`Quantidade do livro "${titulo}" atualizada para ${novaQuantidade}.`);
+      return;
+    }
+  }
+
+  console.log(`Livro "${titulo}" não encontrado no estoque.`);
+}
+
+//Função para listar livros
+function listarLivros() {
+  if (estoque.length === 0) {
+    console.log("O estoque está vazio.");
+    return;
+  }
+
+  console.log("📚 Lista de livros no estoque:");
+  for (let livro of estoque) {
+    console.log(`Título: ${livro.titulo} | Autor: ${livro.autor} | Quantidade: ${livro.quantidade}`);
+  }
+}
+
+// Exemplo de uso 
+adicionarLivro("Dom Casmurro", "Machado de Assis", 10);
+adicionarLivro("O Hobbit", "J.R.R. Tolkien", 5);
+listarLivros();
+
+atualizarQuantidade("O Hobbit", 8);
+removerLivro("Dom Casmurro");
+listarLivros();
