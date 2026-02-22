@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    width: 420px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input {
+    padding: 8px;
+    width: 60%;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+#btnCurtir {
+    background-color: #28a745;
+    color: white;
+}
+
+#btnCurtir:hover {
+    background-color: #218838;
+}
+
+#btnLimpar {
+    background-color: #dc3545;
+    color: white;
+}
+
+#btnLimpar:hover {
+    background-color: #c82333;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+}
